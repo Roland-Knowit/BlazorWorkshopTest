@@ -1,5 +1,6 @@
 ﻿@page "/serverside"
 @attribute [RenderModeInteractiveServer]
+@*@attribute [StreamRendering(true)]*@
 
 <PageTitle>Weather</PageTitle>
 
@@ -24,6 +25,6 @@ else
         // Simulate asynchronous loading to demonstrate streaming rendering
         await Task.Delay(1500);
 
-        WaitLoad = "Loaded!";
+        WaitLoad = "Loaded hej!";
     }
 }
