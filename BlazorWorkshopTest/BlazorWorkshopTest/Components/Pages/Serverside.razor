@@ -1,0 +1,29 @@
+﻿@page "/serverside"
+@attribute [RenderModeInteractiveServer]
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Serverside</h1>
+
+<p>Server-side rendering</p>
+
+@if (WaitLoad == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p>@WaitLoad</p>
+}
+
+@code {
+    private string? WaitLoad = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulate asynchronous loading to demonstrate streaming rendering
+        await Task.Delay(1500);
+
+        WaitLoad = "Loaded!";
+    }
+}
